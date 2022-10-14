@@ -6,10 +6,11 @@ export interface TextProps{//Interface
     size?: 'sm' | 'md' | 'lg';
     children: ReactNode;
     asChild?: boolean;
+    className?: string;
 }
 
 
-export function Text({size = 'md', children, asChild}: TextProps){//Passagem de parâmetros para o component
+export function Text({size = 'md', children, asChild, className}: TextProps){//Passagem de parâmetros para o component
     const Comp = asChild ? Slot: 'span';//Criação da customização das tags para nosso component
     
     return (//Criando o component e suas "variações"
@@ -17,6 +18,11 @@ export function Text({size = 'md', children, asChild}: TextProps){//Passagem de 
            'text-xs': size == 'sm',
            'text-sm': size == 'md',
            'text-md': size == 'lg', 
-        })}>{children}</Comp>
+        },
+        className,
+        )}
+        >
+            {children}
+            </Comp>
     )
     }

@@ -6,10 +6,11 @@ export interface HeadingProps{//Interface
     size?: 'sm' | 'md' | 'lg';
     children: ReactNode;
     asChild?: boolean;
+    className?: string;
 }
 
 
-export function Heading({size = 'md', children, asChild}: HeadingProps){//Passagem de parâmetros para o component
+export function Heading({size = 'md', children, asChild, className}: HeadingProps){//Passagem de parâmetros para o component
     const Comp = asChild ? Slot: 'h2';//Criação da customização das tags para nosso component
     
     return (//Criando o component e suas "variações"
@@ -17,6 +18,10 @@ export function Heading({size = 'md', children, asChild}: HeadingProps){//Passag
            'text-lg': size == 'sm',
            'text-xl': size == 'md',
            'text-2xl': size == 'lg', 
-        })}>{children}</Comp>
+        },
+        className
+        )}
+        >{children}
+        </Comp>
     )
     }

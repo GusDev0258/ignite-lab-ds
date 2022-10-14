@@ -1,16 +1,16 @@
 import {Meta, StoryObj} from '@storybook/react'
-import { button, buttonProps } from './Button'
+import { Button, ButtonProps } from './Button'
 
 export default{//Definindo os componentes no StoryBook
     title: 'Components/Button',
-    component: button,
+    component: Button,
     args:{
-        children: 'Submit'
+        children: 'entrar'
     },
     argTypes:{
 
     }
 
-} as Meta<buttonProps>
+} as Meta<ButtonProps>
 //Variações de componentes, para todo componente é necessário no minimo uma variação para ser exportada, se não, não funciona.
-export const Default: StoryObj<buttonProps> = {}
+export const Default: StoryObj<ButtonProps> = {}
